@@ -41,7 +41,7 @@
               <p>{{item.name}}</p>
               <p class="price">{{item.floor_price}}元起</p>
             </div>
-            <img :src="item.new_pic_url" alt="">
+            <img :src="item.pic_url" alt="">
           </div>
       </div>
     
@@ -99,7 +99,7 @@
           </scroll-view>
         </ul>
       </div>
-    </div>
+    </div> 
 
     <!-- 专题精选 -->
     <div class="topiclist">
@@ -120,7 +120,7 @@
                   <p>{{item.title}}</p>
                   <p>{{item.subtitle}}</p>
                 </div>
-                <div>{{item.price_info}}元起</div>
+                <div>￥{{item.price_info}}</div>
               </div>
             </li>
           </scroll-view>
@@ -136,7 +136,7 @@
           <div v-for="(subitem,subindex) in item.goodsList" :key="subindex">
             <img :src="subitem.list_pic_url" alt="">
             <p>{{subitem.name}}</p>
-            <p>{{subitem.retail_price}}</p>
+            <p>￥{{subitem.retail_price}}</p>
           </div>
            <!-- 跳转 -->
           <div>

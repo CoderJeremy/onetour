@@ -15,7 +15,9 @@ module.exports =  async (ctx) => {
     }).orderBy('new_sort_order','asc').limit(4).select()
     
     // newGoods 新品首发 
-    const newGoods = await mysql('tour_goods').whereIn('id',[1181000, 1135002, 1134030, 1134032, 1006002]).andWhere('is_new',1).select()
+    //const newGoods = await mysql('tour_goods').whereIn('id',[1181000, 1135002, 1134030, 1134032, 1006002]).andWhere('is_new',1).select()
+    const newGoods = await mysql('tour_goods').where('is_new',1).limit(5).select();
+    
 
     // hotGoods 热门单品
     const hotGoods = await mysql('tour_goods').column('id','name','list_pic_url','retail_price','goods_brief').where({
@@ -44,7 +46,7 @@ module.exports =  async (ctx) => {
             return item.id
         })
         // 在商品表中找到childCategoryIds里类别相对应的数据
-        const categoryGoods = await mysql('tour_goods').column('id','name','list_pic_url','retail_price').whereIn('category_id',childCategoryIds).limit(7).select()
+        const categoryGoods = await mysql('tour_goods').column('id','name','list_pic_url','retail_price').whereIn('category_id',childCategoryIds).limit(3).select()
         newCategoryList.push({
             'id':item.id,
             'name':item.name,
