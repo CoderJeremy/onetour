@@ -3,7 +3,7 @@
     <!-- 头部的搜索 -->
     <div class="search">
       <div @click="toMappage">{{cityName}}</div>
-      <div>
+      <div @click="toSearch">
         <input type="text" placeholder="搜索商品" />
         <span class="icon"></span>
       </div>
@@ -184,6 +184,7 @@ export default {
   methods:{
     ...mapMutations(['update']),
 
+    // 获取地图定位
     toMappage(){
       // 通过wx.getSetting方法 先查询用户是否授权“scope.record”
       let that=this
@@ -279,6 +280,13 @@ export default {
     topicDetail(id){
       wx.navigateTo({
           url:'/pages/topicdetail/main?id=' + id
+        })
+    },
+
+    // 搜索点击事件 跳转搜索页面
+    toSearch(){
+        wx.navigateTo({
+          url:'/pages/search/main'
         })
     }
 

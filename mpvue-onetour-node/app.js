@@ -1,12 +1,11 @@
 const Koa = require('koa')
-const config = require('./configs/config')
 const app = new Koa()
-
+const bodyParser = require('koa-bodyparser')
+const config = require('./configs/config')
 const router = require('./routes')
 
-// router.get('/index',(ctx,next)=>{
-//     ctx.body = 'hello world'
-// })
+// 解析请求体
+app.use(bodyParser())
 
 app.use(router.routes())
 

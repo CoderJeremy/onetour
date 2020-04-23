@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/index/main",
     "pages/topic/main",
     "pages/category/main",
@@ -8,7 +9,11 @@
     "pages/mappage/main",
     "pages/countrylist/main",
     "pages/newgoods/main",
-    "pages/topicdetail/main"
+    "pages/topicdetail/main",
+    "pages/counter/main",
+    "pages/search/main",
+    "pages/goods/main"
+
     
   ],
   "window": {
