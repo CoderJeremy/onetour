@@ -31,8 +31,10 @@ router.get('/goods/detailaction',controllers.goods.index.detailAction)//实时�
 router.post('/collect/addcollect',controllers.collect.index.addCollect)//实时查询输入内容
 // 订单相关的接口
 router.post('/order/submitaction',controllers.order.index.submitAction)//实时查询输入内容
+router.get('/order/detailaction',controllers.order.index.detailAction)//获取订单详情
 
 // 购物车相关的接口
 router.post('/cart/addcart',controllers.cart.index.addCart)
+
 module.exports = router
 

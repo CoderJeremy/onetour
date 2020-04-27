@@ -60,7 +60,18 @@ export function post(url,data){
   return request(url,'POST',data)
 }
 
+// 封装openId获取方法
+export function getStorageOpenId(){
+  const openId = wx.getStorageSync('openId')
+  if(openId){
+    return openId
+  }else{
+    return ''
+  }
+};
+
 export default {
   formatNumber,
-  formatTime
+  formatTime,
+  getStorageOpenId
 }

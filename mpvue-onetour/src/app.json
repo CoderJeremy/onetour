@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/order/main",
     "pages/index/main",
     "pages/topic/main",
     "pages/category/main",
@@ -11,8 +12,9 @@
     "pages/topicdetail/main",
     "pages/counter/main",
     "pages/search/main",
-    "pages/order/main",
-    "pages/goods/main"
+    "pages/goods/main",
+    "pages/addresslist/main",
+    "pages/addressselect/main"
     
   ],
   "window": {
