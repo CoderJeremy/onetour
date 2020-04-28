@@ -36,5 +36,10 @@ router.get('/order/detailaction',controllers.order.index.detailAction)//获取�
 // 购物车相关的接口
 router.post('/cart/addcart',controllers.cart.index.addCart)
 
+// 地址相关的接口
+router.get('/address/getlistaction',controllers.address.index.getListAction)//获取地址列表
+router.get('/address/detailaction',controllers.address.index.detailAction)//读取数据库中的地址信息
+router.post('/address/saveaction',controllers.address.index.saveAction)//保存地址
+
 module.exports = router
 

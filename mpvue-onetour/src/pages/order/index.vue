@@ -59,7 +59,7 @@
      <!-- bottom -->
      <div class="bottom">
          <div>实付: ￥{{allprice}}</div>
-         <div class="pay">支付</div>
+         <div class="pay" @click="pay">支付</div>
      </div>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default {
             singleprice:'',//单价
         }
     },
-    onShow(){
+    mounted(){
         if(wx.getStorageSync('addressId')){
             this.addressId = wx.getStorageSync('addressId')
         }
@@ -110,9 +110,19 @@ export default {
                 this.address = data.address
             }
             this.goodsList.map((item) => {
-                this.allprice = Number(item.retail_price * item.number)+Number(this.allprice)
+                this.allprice = Number(item.retail_price * item.number) + Number(this.allprice)
                 // console.log(this.allprice)
             })
+        },
+        // 微信支付
+        pay(){
+            wx.showToast({
+                title: '支付功能暂时无法接入',
+                icon:'none',
+                duration:1500,
+                mask:false,
+                success: res =>{}
+            });
         }
     }
 
