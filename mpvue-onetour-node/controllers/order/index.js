@@ -1,6 +1,7 @@
 // 订单
 const { mysql } = require('../../configs/mysql')
 
+// 提交订单
 async function submitAction(ctx){
     const {openId} = ctx.request.body
     let goodsId = ctx.request.body.goodsId
@@ -47,7 +48,7 @@ async function submitAction(ctx){
     }
 }
 
-// 获取订单资料
+// 获取订单内容
 async function detailAction(ctx){
     const openId = ctx.query.openId
     const addressId = ctx.query.addressId || ''
@@ -76,11 +77,12 @@ async function detailAction(ctx){
         }).orderBy('is_default','desc').select()
     }
     ctx.body={
-        price: orderDetail[0].allprice,
+        allprice: orderDetail[0].allprice,
         goodsList: list,
         address: addressList[0]||{}
     }
 }
+
 
 module.exports = {
     submitAction,

@@ -74,6 +74,39 @@ async function detailAction(ctx){
     }
 }
 
+// 根据类别 查询商品列表
+async function goodsList(ctx){
+    const categoryId = ctx.query.categoryId
+
+    let goodsList = []
+    if(categoryId){
+        goodsList = await mysql('tour_goods').where({
+            'category_id':categoryId
+        }).select()
+        const currentNav = await mysql('tour_category').where({
+            'id': categoryId
+        }).select()
+        if(goodsList.length==0){
+            // 找到与之相关的子类 再找子类相关的商品
+            let subIds = await mysql('tour_category').where({
+                'parent_id': categoryId
+            }).column('id').select()
+            if(subIds.length!==0){
+                subIds = subIds.map((item)=>{
+                    return item.id
+                })
+            }
+            goodsList = await mysql('tour_goods').whereIn('category_id',subIds).limit(50).select()
+        }
+        ctx.body={
+            data: goodsList,
+            currentNav: currentNav[0]
+        }
+    }
+
+}
+
 module.exports ={
-    detailAction
+    detailAction,
+    goodsList
 }

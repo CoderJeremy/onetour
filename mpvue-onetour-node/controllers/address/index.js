@@ -21,47 +21,6 @@ async function detailAction(ctx){
     }
 }
 
-// 保存地址
-// async function saveAction(ctx){
-//     const addressId = ctx.request.body.addressId
-//     const {userName,telNumber,address,detailaddress,checked,openId} = ctx.request.body
-//     // 如果默认选中，先判断数据库中是否存在默认地址
-//     if(checked){
-//         const isDefault = await mysql('tour_address').where({
-//             'user_id': openId,
-//             'is_default': 1
-//         }).select()
-//         // 存在 设为不是默认
-//         if(isDefault.length>0){
-//             await mysql('tour_address').where({
-//                 'user_id': openId,
-//                 'is_default': 1
-//             }).update({
-//                 'is_default': 0
-//             })
-//         }
-//     }
-//     // 添加地址
-//     if(!addressId){
-//         const data = await mysql('tour_address').insert({
-//             'name': userName,
-//             'mobile': telNumber,
-//             'address': address,
-//             'address_detail': detailaddress,
-//             'user_id': openId,
-//             'is_default': checked == 'true' || checked ? 1 : 0
-//         })
-//         if(data){
-//             ctx.body={
-//                 data:true
-//             }
-//         }else{
-//             ctx.body={
-//                 data:false
-//             } 
-//         }
-//     }
-// }
 // 添加或更新收货地址
 async function saveAction(ctx) {
     const addressId = ctx.request.body.addressId

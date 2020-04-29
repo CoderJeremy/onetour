@@ -245,7 +245,7 @@ export default {
     // channel点击事件
     categoryList(id){
       wx.navigateTo({
-        url:'/pages/categorylist/main?id=' + id
+        url:'/pages/categorylist/main?id=' + id //频道页面
       })
     },
 

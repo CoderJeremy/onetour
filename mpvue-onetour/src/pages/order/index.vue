@@ -101,18 +101,20 @@ export default {
         async getDetail(){
             const data = await get('/order/detailaction',{
                 openId: this.openId,
-                addressId: this.addressId
+                addressId: this.addressId, 
+                //allprice: this.allprice
             })
-            console.log(data)
             if(data){
                 // this.allprice = data.price
                 this.goodsList = data.goodsList
                 this.address = data.address
+                this.allprice = 0
+
             }
             this.goodsList.map((item) => {
+                //this.allprice = 0
                 this.allprice = Number(item.retail_price * item.number) + Number(this.allprice)
-                // console.log(this.allprice)
-            })
+            })               
         },
         // 微信支付
         pay(){
