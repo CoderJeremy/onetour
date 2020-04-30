@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/topic/main",
     "pages/category/main",
+    "pages/topic/main",
     "pages/cart/main",
     "pages/my/main",
     "pages/mappage/main",
@@ -23,7 +23,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f9dd9d",
     "navigationBarTitleText": "OneTour",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#666",

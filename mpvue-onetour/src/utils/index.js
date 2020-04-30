@@ -70,6 +70,24 @@ export function getStorageOpenId(){
   }
 };
 
+// 判断用户是否登录
+export function login(){
+  const userInfo = wx.getStorageSync('userInfo')
+  if(userInfo){
+    return userInfo
+  }
+}
+export function toLogin(){
+    const userInfo = wx.getStorageSync('userInfo')
+    if(!userInfo){
+      wx.navigateTo({
+        url: '/pages/login/main',
+      });
+    }else{
+      return true
+    }
+}
+
 export default {
   formatNumber,
   formatTime,

@@ -19,6 +19,45 @@ async function categoryNav(ctx){
 
 }
 
+// 分类页面
+async function indexAction(ctx){
+    const categoryId = ctx.query.categoryId
+    const categoryList = await mysql('tour_category').where({
+        'parent_id':0
+    }).select()
+    const currentCategory = []
+
+    if(categoryId){
+        currentCategory =  await mysql('tour_category').where({
+            'parent_id': categoryId
+        }).select()
+    }
+
+    ctx.body={
+        'categoryList': categoryList
+    }
+}
+
+// 点击左侧菜单获取的分类商品
+async function currentAction(ctx) {
+    const categoryId = ctx.query.categoryId
+    const data =  {}
+    const currentOne = await mysql('tour_category').where({
+      'id': categoryId
+    }).select()
+    const subList = await mysql('tour_category').where({
+      'parent_id': currentOne[0].id
+    }).select()
+    data.currentOne = currentOne[0]
+    data.currentOne.subList = subList
+  
+    ctx.body = {
+      'data': data
+    }
+}
+
 module.exports ={
-    categoryNav
+    categoryNav,
+    indexAction,
+    currentAction
 }

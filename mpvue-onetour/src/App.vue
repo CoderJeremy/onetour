@@ -10,7 +10,7 @@ export default {
       city: "Changping",
       province: "Tokyo",
       country: "Japan",
-      avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIbWFEIJj8IpGeHM7dGic1aTFZALjWcMm9ltWfFiaQfVRYticWBfgGfzXWMt2EkJWiaicPtftHAlWxUibxQ/132",
+      avatarUrl: "https://i2.hdslb.com/bfs/face/4fd856aa2ca6fd7521a1d853ea0b7090dfc743f0.jpg@150w_150h.jpg",
       watermark: { timestamp: 1535513485, appid: "wx16b1a5228d742dce" }
     };
     var openId = userInfo.openId;
@@ -46,6 +46,7 @@ export default {
 </script>
 
 <style>
+@import url('./iconfont/iconfont.css');
 .container {
   height: 100%;
   display: flex;

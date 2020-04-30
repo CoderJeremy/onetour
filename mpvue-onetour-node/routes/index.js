@@ -20,7 +20,9 @@ const controllers = require('../controllers/index')
 router.get('/index/index', controllers.home.index)
 
 // 分类相关的接口
-router.get('/category/categorynav',controllers.category.index.categoryNav)
+router.get('/category/categorynav',controllers.category.index.categoryNav)//获取分类导航
+router.get('/category/indexaction',controllers.category.index.indexAction)//获取分类页面内容
+router.get('/category/currentaction',controllers.category.index.currentAction)//切换当前点击页面内容
 
 // 搜索相关的接口
 router.get('/search/indexaction',controllers.search.index.indexAction)// 获取搜索历史数据
@@ -47,6 +49,11 @@ router.get('/cart/cartlist',controllers.cart.index.cartList)
 router.get('/address/getlistaction',controllers.address.index.getListAction)//获取地址列表
 router.get('/address/detailaction',controllers.address.index.detailAction)//读取数据库中的地址信息
 router.post('/address/saveaction',controllers.address.index.saveAction)//保存地址
+
+// 专题接口
+router.get('/topic/listaction',controllers.topic.index.listAction)//获取专题列表
+router.get('/topic/detailaction',controllers.topic.index.detailAction)//获取专题内容详情
+
 
 module.exports = router
 
