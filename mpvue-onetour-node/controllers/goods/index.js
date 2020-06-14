@@ -60,8 +60,6 @@ async function detailAction(ctx){
             allSum += element.number
         }
     }
-
-
     ctx.body ={
         'goodsInfo': goodsInfo[0] || [],
         'gallery': gallery,
@@ -77,7 +75,6 @@ async function detailAction(ctx){
 // 根据类别 查询商品列表
 async function goodsList(ctx){
     const categoryId = ctx.query.categoryId
-
     let goodsList = []
     if(categoryId){
         goodsList = await mysql('tour_goods').where({

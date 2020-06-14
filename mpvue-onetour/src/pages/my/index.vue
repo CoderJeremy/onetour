@@ -14,6 +14,7 @@
         <span>{{item.title}}</span>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -26,7 +27,7 @@ export default {
         {
           title: "我的订单",
           icon: "icon-unie64a",
-          url: ""
+          url: "/pages/order/main"
         },
         {
           title: "优惠券",

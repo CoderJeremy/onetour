@@ -291,7 +291,7 @@ export default {
                 this.showpop = true
             }
         }
-
+ 
     }
 }
 </script>

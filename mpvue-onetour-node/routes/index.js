@@ -31,14 +31,14 @@ router.post('/search/clearhistoryAction',controllers.search.index.clearHistoryAc
 router.get('/search/helperaction',controllers.search.index.helperAction)//实时查询输入内容
 
 // 商品详情页面接口
-router.get('/goods/detailaction',controllers.goods.index.detailAction)//实时查询输入内容
+router.get('/goods/detailaction',controllers.goods.index.detailAction)
 router.get('/goods/goodslist',controllers.goods.index.goodsList) //获取商品列表
 
 // 收藏相关的接口
-router.post('/collect/addcollect',controllers.collect.index.addCollect)//实时查询输入内容
+router.post('/collect/addcollect',controllers.collect.index.addCollect)
 
 // 订单相关的接口
-router.post('/order/submitaction',controllers.order.index.submitAction)//实时查询输入内容
+router.post('/order/submitaction',controllers.order.index.submitAction)
 router.get('/order/detailaction',controllers.order.index.detailAction)//获取订单详情
 
 // 购物车相关的接口

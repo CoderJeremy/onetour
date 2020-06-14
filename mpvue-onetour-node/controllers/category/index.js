@@ -26,13 +26,11 @@ async function indexAction(ctx){
         'parent_id':0
     }).select()
     const currentCategory = []
-
     if(categoryId){
         currentCategory =  await mysql('tour_category').where({
             'parent_id': categoryId
         }).select()
     }
-
     ctx.body={
         'categoryList': categoryList
     }

@@ -102,17 +102,14 @@ export default {
             const data = await get('/order/detailaction',{
                 openId: this.openId,
                 addressId: this.addressId, 
-                //allprice: this.allprice
             })
             if(data){
                 // this.allprice = data.price
                 this.goodsList = data.goodsList
                 this.address = data.address
                 this.allprice = 0
-
             }
             this.goodsList.map((item) => {
-                //this.allprice = 0
                 this.allprice = Number(item.retail_price * item.number) + Number(this.allprice)
             })               
         },

@@ -133,7 +133,7 @@
       <div class="list" v-for="(item,index) in newCategoryList" :key="index">
         <div class="head">{{item.name}}好物</div>
         <div class="sublist">
-          <div v-for="(subitem,subindex) in item.goodsList" :key="subindex">
+          <div v-for="(subitem,subindex) in item.goodsList" :key="subindex"  @click="goodsDetail(subitem.id)">
             <img :src="subitem.list_pic_url" alt="">
             <p>{{subitem.name}}</p>
             <p>￥{{subitem.retail_price}}</p>
@@ -260,6 +260,13 @@ export default {
     toCountryList(){
       wx.navigateTo({
         url:'/pages/countrylist/main'
+      })
+    },
+
+    // 跳转商品详情页面
+    goodsDetail(id){
+      wx.navigateTo({
+        url:'/pages/goods/main?id=' + id
       })
     },
     

@@ -4,7 +4,6 @@ const {mysql} = require('../../configs/mysql')
 // 加入购物车
 async function addCart(ctx){
     const{openId, goodsId,number} = ctx.request.body
-
     // 判断当前商品是否已经存在 存在只增加数量 ,不存在增加商品数据
     const oldNumber = await mysql('tour_cart').where({
         'user_id': openId,
