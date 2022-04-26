@@ -3,3 +3,6 @@
 ## A lite app about customized travel based on mpvue+koa3+mysql
 ### blog:http://wujianwei.work
 ### email:wujianwei0320@163.com
+
+
+start
